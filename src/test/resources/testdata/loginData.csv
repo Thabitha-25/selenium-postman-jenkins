@@ -1,0 +1,4 @@
+username,password,expectedMessage
+tomsmith,SuperSecretPassword!,You logged into a secure area
+wronguser,wrongpass,Your username is invalid
+,,Your username is invalid

@@ -1,0 +1,10 @@
+<suite name="Login Automation Suite">
+
+    <test name="Login Tests">
+        <classes>
+            <class name="com.login.tests.LoginTest"/>
+            <class name="com.login.tests.DataDrivenLoginTest"/>
+        </classes>
+    </test>
+
+</suite>
