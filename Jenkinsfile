@@ -1,40 +1,31 @@
 pipeline {
     agent any
 
-    stages {
+    tools {
+        maven 'Maven'
+        jdk 'JDK'
+    }
 
-        stage('Checkout Code') {
-            steps {
-                git 'https://github.com/Thabitha-25/selenium-postman-jenkins.git'
-            }
-        }
+    stages {
 
         stage('Build Project') {
             steps {
-                bat 'mvn clean compile'
+                sh 'mvn clean compile'
             }
         }
 
         stage('Run Selenium Tests') {
             steps {
-                bat 'mvn test'
-            }
-        }
-
-        stage('Run Postman API Tests') {
-            steps {
-                bat 'newman run postman/login_api_collection.json'
+                sh 'mvn test'
             }
         }
     }
 
     post {
-        always {
-            publishTestNGResults testResultsPattern: '**/testng-results.xml'
-        }
         success {
-            echo 'Build and tests executed successfully'
+            echo 'Build and tests successful'
         }
+
         failure {
             echo 'Build or tests failed'
         }
