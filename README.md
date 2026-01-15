@@ -241,8 +241,6 @@ pipeline {
 
 ---
 
----
-
 ## Author
 
 Automation Tester
