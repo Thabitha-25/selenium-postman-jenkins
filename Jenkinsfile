@@ -1,11 +1,6 @@
 pipeline {
     agent any
 
-    tools {
-        maven 'Maven'
-        jdk 'JDK'
-    }
-
     stages {
 
         stage('Build Project') {
@@ -25,7 +20,6 @@ pipeline {
         success {
             echo 'Build and tests successful'
         }
-
         failure {
             echo 'Build or tests failed'
         }
