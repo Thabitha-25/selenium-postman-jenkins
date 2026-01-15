@@ -1,4 +1,4 @@
-<suite name="Login Automation Suite">
+<suite name="Login Automation Suite" parallel="classes" thread-count="2">
 
     <test name="Login Tests">
         <classes>
